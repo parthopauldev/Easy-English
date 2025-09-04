@@ -107,7 +107,7 @@ const displayLevelData = (levelWord) => {
 
   levelWord.forEach((item) => {
     let word = document.createElement("div");
-
+word.classList.add('max-w-[600px]')
     word.innerHTML = `
 <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
     <h2 class="font-bold text-2xl">${
