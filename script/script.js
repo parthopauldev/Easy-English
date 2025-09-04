@@ -1,3 +1,10 @@
+// speak word feature 
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 // load lesson btn
 let loadLessons = async () => {
 
@@ -118,7 +125,7 @@ const displayLevelData = (levelWord) => {
         <button  onclick="loadWordDetail(${
           item.id
         })" class="btn bg-[#1A91FF1A] hover:bg-[#1A91FFFF]"><i class="fa-solid fa-circle-info"></i></button>
-        <button class="btn bg-[#1A91FF1A] hover:bg-[#1A91FFFF]"><i class="fa-solid fa-volume-low"></i></button>
+        <button onclick="pronounceWord('${item.word}')" class="btn bg-[#1A91FF1A] hover:bg-[#1A91FFFF]"><i class="fa-solid fa-volume-low"></i></button>
     </div>
 </div>
 `;
